@@ -1,0 +1,34 @@
+{
+  "name": "df-visualization-web-ui",
+  "version": "1.0.0",
+  "description": "Web Data Visualization UI with AngularJS/Bootstrap/D3.js",
+  "authors": [
+    "Jian Wu"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "spark",
+    "dataframe",
+    "data",
+    "visualization"
+  ],
+  "homepage": "https://github.com/jianwu-github/spark-df-visualization-server",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.4.9",
+    "angular-ui-router": "^0.2.17",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.5.0",
+    "angular-bootstrap": "^1.1.2",
+    "angular-ui-grid": "^3.1.0",
+    "d3": "^3.5.14"
+  }
+}
