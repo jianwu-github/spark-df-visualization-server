@@ -1,5 +1,9 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
+		karma: {
+			unit: {configFile: 'karma-unit.conf.js'}
+		},
+
 	    clean: {
 	        options: {force: true},
 	        cleandest: {
@@ -19,32 +23,28 @@ module.exports = function(grunt) {
 	        }
 	    },
 
-	    bower_concat: {
-	        all: {
-                dest: 'dist/dfvizlibs.js',
-                cssDest: 'dist/dfvizlibs.css',
-                
-                mainFiles: {
-                    'jquery': ['dist/jquery.js'],
-                    'd3': ['d3.js'],
-                    'angular': ['angular.js'],
-                    'angular-ui-router': ['release/angular-ui-router.js'],
-                    'bootstrap': ['dist/js/bootstrap.js', 'dist/css/bootstrap.css', 'dist/css/bootstrap-theme.css'],
-                    'font-awesome': ['css/font-awesome.css'],
-                    'angular-bootstrap': ['ui-bootstrap-tpls.js']
-                },
-
-                bowerOptions: {relative: false}
-	        }
-	    },
-
 	    copy: {
 	    	copyhtml: {
 	    		src: ['**/*.html'],
 	    		expand: true,
 	    		cwd: 'app/',
-	    		dest: 'dist//'
+	    		dest: 'dist/'
 	    	},
+
+	    	copyjqueryjs: {
+	    		src: 'bower_components/jquery/dist/jquery.min.js',
+	    		dest: 'dist/js/jquery.min.js'
+	    	},
+
+            copybsjs: {
+            	src: 'bower_components/bootstrap/dist/js/bootstrap.min.js',
+            	dest: 'dist/js/bootstrap.min.js'
+            }, 
+
+            copybspapercss: {
+            	src: 'bower_components/bower-bootswatch-paper/css/bootstrap.min.css',
+            	dest: 'dist/css/bootswatch-paper.min.css'
+            },             
 
 	    	copybsfonts: {
 	    		src: ['fonts/*'],
@@ -54,12 +54,47 @@ module.exports = function(grunt) {
 	    		flatten: true
 	    	},
 
+            copyfacss: {
+            	src: 'bower_components/font-awesome/css/font-awesome.min.css',
+            	dest: 'dist/css/font-awesome.min.css'
+            },   
+
 	        copyfafonts: {
 	    		src: ['fonts/*'],
 	    		expand: true,
 	    		cwd: 'bower_components/font-awesome/',
 	    		dest: 'dist/fonts/',
 	    		flatten: true
+	    	},
+
+            copyd3: {
+	    		src: 'bower_components/d3/d3.min.js',
+	    		dest: 'dist/js/d3.min.js'
+	    	},
+
+	    	copyangular: {
+	    		src: 'bower_components/angular/angular.min.js',
+	    		dest: 'dist/js/angular.min.js'
+	    	},
+
+	    	copyangularuirouter: {
+	    		src: 'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+	    		dest: 'dist/js/angular-ui-router.min.js'
+	    	},
+
+	    	copyangularbs: {
+	    		src: 'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+	    		dest: 'dist/js/ui-bootstrap-tpls.min.js'
+	    	},
+
+	    	copyangularuigridjs: {
+	    		src: 'bower_components/angular-ui-grid/ui-grid.min.js',
+	    		dest: 'dist/js/ui-grid.min.js'
+	    	},
+
+	    	copyangularuigridcss: {
+	    		src: 'bower_components/angular-ui-grid/ui-grid.min.css',
+	    		dest: 'dist/css/ui-grid.min.css'
 	    	}
 	    },
 
@@ -82,7 +117,7 @@ module.exports = function(grunt) {
 
 	    	sources: {
 	    		files: ['app/index.html', 'app/views/**/*.html', 'app/js/**/*.js', 'app/css/**/*.css'],
-	    		tasks: ['clean', 'concat', 'bower_concat', 'copy']
+	    		tasks: ['clean', 'concat', 'copy']
 	    	}
 	    }
 
@@ -90,10 +125,10 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-bower-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-karma');
 
-	grunt.registerTask('default', ['clean', 'concat', 'bower_concat', 'copy', 'connect', 'watch']);
+	grunt.registerTask('default', ['clean', 'concat', 'copy', 'connect', 'watch']);
 }; // wrapper function
