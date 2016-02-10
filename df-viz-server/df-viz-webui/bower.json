@@ -30,6 +30,8 @@
     "angular-bootstrap": "^1.1.2",
     "angular-ui-grid": "^3.1.0",
     "d3": "^3.5.14",
-    "bower-bootswatch-paper": "*"
+    "bower-bootswatch-paper": "*",
+    "bower-lodash": "^4.3.0",
+    "d3.parcoords.js": "parallel-coordinates#*"
   }
 }

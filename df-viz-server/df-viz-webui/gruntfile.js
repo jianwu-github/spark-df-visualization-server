@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
 	        dist: {
 	            src: ['app/js/vizapp.js', 'app/js/controllers/*.js'],
-	            dest: 'dist/dfvizapp.js'
+	            dest: 'dist/js/dfvizapp.js'
 	        }
 	    },
 
@@ -70,6 +70,21 @@ module.exports = function(grunt) {
             copyd3: {
 	    		src: 'bower_components/d3/d3.min.js',
 	    		dest: 'dist/js/d3.min.js'
+	    	},
+
+	    	copylodash: {
+	    		src: 'bower_components/bower-lodash/dist/lodash.min.js',
+	    		dest: 'dist/js/lodash.min.js'
+	    	},
+
+            copyd3parcoordsjs: {
+	    		src: 'bower_components/d3.parcoords.js/d3.parcoords.js',
+	    		dest: 'dist/js/d3.parcoords.js'
+	    	},
+
+	    	copyd3parcoordscss: {
+	    		src: 'bower_components/d3.parcoords.js/d3.parcoords.css',
+	    		dest: 'dist/css/d3.parcoords.css'
 	    	},
 
 	    	copyangular: {

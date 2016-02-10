@@ -6,19 +6,38 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="css/bootswatch-paper.min.css" />
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/d3.parcoords.css" />
     <link rel="stylesheet" type="text/css" href="css/ui-grid.min.css" />
 </head>
-<body>
-	<div class="container">
-		<div class="jumbotron">
-            <h2>Spark Dataframe Query and Visualization Server</h2>
-            <p>Spark Dataframe Visualization Server is a Play Framework based Server with Data Visualization Web UI based on Angular/Bootstrap/D3.js, it provides data exploration, analysis and Visualization for Spark SQL DataFrames.</p>
-            <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+<body ng-controller="DFVizAppController">
+    <nav class="navbar navbar-default" role="navigation" ng-cloak>
+        <div class="container-fluid" id="navbarContainer">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ui-sref="about">Spark DataFrame Visualization Server</a> 
+            </div>
+            <div class="collapse navbar-collapse" id="top-navbar">
+                <ul class="nav navbar-nav navbar-left">
+                    <li ng-class="{active: activeView === 'home'}"><a ui-sref="home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home</a></li>
+                    <li ng-class="{active: activeView === 'dataframes'}"><a ui-sref="dataframes"><i class="fa fa-table"></i>&nbsp;DataFrames</a></li>
+                    <li ng-class="{active: activeView === 'views'}"><a ui-sref="views"><i class="fa fa-columns"></i>&nbsp;Views</a></li>
+                    <li ng-class="{active: activeView === 'sparksql'}"><a ui-sref="sparksql"><i class="fa fa-search"></i>&nbsp;Spark SQL Query &amp; Charts</a></li>
+                </ul>
+            </div>
         </div>
-	</div>
+    </nav>     
+    <div id="viewContainer" class="container-fluid">
+        <div ui-view></div>
+    </div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lodash.min.js"></script>
     <script type="text/javascript" src="js/d3.min.js"></script>
+    <script type="text/javascript" src="js/d3.parcoords.js"></script>
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/angular-ui-router.min.js"></script>
     <script type="text/javascript" src="js/ui-bootstrap-tpls.min.js"></script>
