@@ -110,6 +110,16 @@ module.exports = function(grunt) {
 	    	copyangularuigridcss: {
 	    		src: 'bower_components/angular-ui-grid/ui-grid.min.css',
 	    		dest: 'dist/css/ui-grid.min.css'
+	    	},
+
+	    	copyngwigjs: {
+	    		src: 'bower_components/ngWig/dist/ng-wig.min.js',
+	    		dest: 'dist/js/ng-wig.min.js'
+	    	},
+
+	    	copyngwigcss: {
+	    		src: 'bower_components/ngWig/dist/css/ng-wig.css',
+	    		dest: 'dist/css/ng-wig.css'
 	    	}
 	    },
 

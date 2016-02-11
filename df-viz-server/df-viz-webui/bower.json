@@ -32,6 +32,8 @@
     "d3": "^3.5.14",
     "bower-bootswatch-paper": "*",
     "bower-lodash": "^4.3.0",
-    "d3.parcoords.js": "parallel-coordinates#*"
+    "d3.parcoords.js": "parallel-coordinates#*",
+    "angular-mocks": "1.4.9",
+    "ngWig": "ng-wig#^2.3.4"
   }
 }

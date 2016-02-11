@@ -1,5 +1,6 @@
 dfVizApp.controller("QueryChartController", function($scope, $location, $http, $q) {
-    var data = [
+    var vm = this;
+    vm.data = [
         [0,-0,0,0,0,3 ],
         [1,-1,1,2,1,6 ],
         [2,-2,4,4,0.5,2],
@@ -8,7 +9,7 @@ dfVizApp.controller("QueryChartController", function($scope, $location, $http, $
     ];
 
     var pc = d3.parcoords()("#parcoords-chart")
-               .data(data)
+               .data(vm.data)
                .render()
                .ticks(3)
                .createAxes();

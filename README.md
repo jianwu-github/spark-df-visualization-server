@@ -6,3 +6,11 @@ This repository has two projects:
 - df-rest-server: a Scala/Play/Spark based RESTful Server exposing Spark SQL Query running against Spark DataFrames
 - df-viz-webui: a Javascript Application Project building Web UI with npm, grunt and bower
 
+You can build and run df-vis-webui project using npm/bower/grunt as:
+```
+$cd df-viz-server/df-viz-webui
+$npm install
+$bower install
+$grunt
+```
+

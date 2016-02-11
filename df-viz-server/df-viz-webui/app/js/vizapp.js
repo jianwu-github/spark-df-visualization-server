@@ -8,15 +8,23 @@
     
     $stateProvider
         .state('home', 
-               { url: '/home', templateUrl: 'view/home.html'
+               { url: '/home', 
+                 templateUrl: 'view/home.html',
+                 controller: 'HomeController',
+                 controllerAs: 'homectrl'
                })
         .state('dataframes', 
-               { url: '/dataframes', templateUrl: 'view/dataframes.html'
+               { url: '/dataframes', 
+                 templateUrl: 'view/dataframes.html'
                })
         .state('views', 
-               { url: '/views', templateUrl: 'view/dfviews.html'
+               { url: '/views', 
+                 templateUrl: 'view/dfviews.html'
                })
         .state('sparksql', 
-               { url: '/sparksql', templateUrl: 'view/sparksqlquery.html'
+               { url: '/sparksql', 
+                 templateUrl: 'view/sparksqlquery.html',
+                 controller: 'QueryChartController',
+                 controllerAs: 'querychartctrl'
                });
 });
